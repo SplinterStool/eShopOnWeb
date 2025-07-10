@@ -78,7 +78,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
            
     # Deploy Azure WebApp using Bicep file
-    - name: deploy
+    - name: Deploy Azure WebApp using Bicep file
       uses: azure/arm-deploy@v2
       with:
         subscriptionId: ${{ env.SUBSCRIPTION-ID }}

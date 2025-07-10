@@ -83,7 +83,6 @@ jobs:
         type: deployment
         operation: create
         name: webapp-deployment
-        location: eastus
         scope: resourceGroup
         resource-group-name: rg-eshoponweb-eastus
         subscription-id: 957858da-fe2a-4f2b-bddf-6dbb28be61cc

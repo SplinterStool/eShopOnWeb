@@ -76,16 +76,31 @@ jobs:
       uses: azure/login@v2
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy Azure WebApp using Bicep file
+      uses: azure/bicep-deploy@v2
+      with:
+        type: deployment
+        operation: create
+        name: webapp-deployment
+        location: ${{ env.LOCATION }}
+        scope: resourcegroup
+        resource-group: ${{ env.RESOURCE_GROUP }}
+        subscription-id: ${{ env.SUBSCRIPTION_ID }}
+        template-file: bicep-template/webapp.bicep
+        parameters: |
+          webAppName=${{ env.WEBAPP_NAME }}
+          location=${{ env.LOCATION }}
            
     # Deploy Azure WebApp using Bicep file
-    - name: Deploy Azure WebApp using Bicep file
-      uses: azure/arm-deploy@v2
-      with:
-        subscriptionId: ${{ env.SUBSCRIPTION-ID }}
-        resourceGroupName: ${{ env.RESOURCE-GROUP }}
-        template: bicep-template/webapp.bicep
-        parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
-        failOnStdErr: false   
+    #- name: Deploy Azure WebApp using Bicep file
+    #  uses: azure/arm-deploy@v2
+    #  with:
+    #    subscriptionId: ${{ env.SUBSCRIPTION-ID }}
+    #    resourceGroupName: ${{ env.RESOURCE-GROUP }}
+    #    template: bicep-template/webapp.bicep
+    #    parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
+    #    failOnStdErr: false   
   
     #- name: Deploy Bicep using Azure CLI
     #  uses: azure/cli@v2

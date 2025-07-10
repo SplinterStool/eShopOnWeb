@@ -4,6 +4,9 @@ param sku string = 'S1' // The SKU of App Service Plan
 param webAppName string
 param location string
 
+output echoedWebAppName string = webAppName
+output echoedLocation string = location
+
 var appServicePlanName = toLower('AppServicePlan-${webAppName}')
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {

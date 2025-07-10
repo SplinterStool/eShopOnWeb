@@ -88,8 +88,10 @@ jobs:
         resource-group-name: ${{ env.RESOURCE_GROUP }}
         subscription-id: ${{ env.SUBSCRIPTION_ID }}
         template-file: bicep-template/webapp.bicep
-        parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
-           
+        parameters:
+          webAppName: devops-webapp-eastus-199622013
+          location: eastus
+          
     # Deploy Azure WebApp using Bicep file
     #- name: Deploy Azure WebApp using Bicep file
     #  uses: azure/arm-deploy@v2

@@ -1,6 +1,6 @@
-#param webAppName string = uniqueString(resourceGroup().id) // Generate unique String for web app name
+//param webAppName string = uniqueString(resourceGroup().id) // Generate unique String for web app name
 param sku string = 'S1' // The SKU of App Service Plan
-#param location string = resourceGroup().location
+//param location string = resourceGroup().location
 param webAppName string
 param location string
 

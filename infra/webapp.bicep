@@ -1,4 +1,4 @@
-param sku string = 'S1' // The SKU of App Service Plan
+param sku string = 'B1' // The SKU of App Service Plan
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {
   name: 'AppServicePlan-devops-webapp-eastus-199622013'

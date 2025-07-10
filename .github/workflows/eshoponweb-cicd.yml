@@ -86,7 +86,7 @@ jobs:
         location: ${{ env.LOCATION }}
         scope: resourceGroup
         resource-group-name: ${{ env.RESOURCE_GROUP }}
-        subscription-id: ${{ env.SUBSCRIPTION_ID }}
+        subscription-id: 957858da-fe2a-4f2b-bddf-6dbb28be61cc
         template-file: bicep-template/webapp.bicep
         parameters: >
           {

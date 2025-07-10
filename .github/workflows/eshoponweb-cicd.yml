@@ -84,7 +84,7 @@ jobs:
         operation: create
         name: webapp-deployment
         location: ${{ env.LOCATION }}
-        scope: resourcegroup
+        scope: resourceGroup
         resource-group-name: ${{ env.RESOURCE_GROUP }}
         subscription-id: ${{ env.SUBSCRIPTION_ID }}
         template-file: bicep-template/webapp.bicep
